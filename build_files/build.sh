@@ -75,3 +75,4 @@ for remote in fedora fedora-testing; do
    fi
 done
 
+flatpak --system -y install --reinstall --or-update org.atheme.audacious org.videolan.VLC org.onlyoffice.desktopeditors io.mpv.Mpv com.usebottles.bottles net.lutris.Lutris
