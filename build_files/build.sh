@@ -67,12 +67,4 @@ dnf -y install "${FEDORA_PACKAGES[@]}"
 #
 #systemctl enable podman.socket
 #
-flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
-# Disable Fedora Flatpak remotes
-for remote in fedora fedora-testing; do
-   if flatpak remote-list | grep -q "$remote"; then
-        flatpak remote-delete "$remote"
-   fi
-done
 
-flatpak --system -y install --reinstall --or-update org.atheme.audacious org.videolan.VLC org.onlyoffice.desktopeditors io.mpv.Mpv com.usebottles.bottles net.lutris.Lutris
