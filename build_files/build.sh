@@ -27,8 +27,8 @@ dnf5 install -y tmux
 dnf config-manager -y addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo
 dnf install -y mullvad-browser
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-#dnf install -y @virtualization
-#dnf install -y @development-tools
+dnf install -y @virtualization
+dnf install -y @development-tools
 #dnf install -y tmux neovim emacs chromium zsh xiphos thunderbird libreoffice tailscale
 #dnf install -y distrobox  usbguard usbguard-notifier setroubleshoot setools fscrypt neovim pam-u2f flatpak
 #dnf install -y pam_yubico pamu2fcfg yubikey-manager  headsetcontrol gnome-text-editor evince 
