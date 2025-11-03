@@ -56,7 +56,6 @@ FEDORA_PACKAGES=(
     powertop
     ptyxis
     restic
-    wireguard-tools
     zsh
     intel-media-driver
 )
