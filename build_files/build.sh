@@ -35,6 +35,7 @@ dnf install -y @development-tools
 #
 FEDORA_PACKAGES=(
     mullvad-browser 
+    deskflow
     tmux
     neovim
     emacs
