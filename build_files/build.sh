@@ -29,13 +29,49 @@ dnf install -y mullvad-browser
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf install -y @virtualization
 dnf install -y @development-tools
-dnf install -y tmux neovim emacs zsh tailscale
-dnf install -y distrobox  usbguard usbguard-notifier setroubleshoot setools fscrypt neovim pam-u2f flatpak
+#dnf install -y tmux neovim emacs zsh tailscale
+#dnf install -y distrobox  usbguard usbguard-notifier setroubleshoot setools fscrypt neovim pam-u2f flatpak
 #dnf install -y pam_yubico pamu2fcfg yubikey-manager  headsetcontrol gnome-text-editor evince 
 #
-dnf install -y intel-media-driver
+FEDORA_PACKAGES=(
+    mullvad-browser 
+    tmux
+    neovim
+    emacs
+    zsh
+    fish
+    tailscape
+    freeipa-client
+    distrobox
+    usbguard
+    usbguard-notifier
+    setroubleshoot
+    setools
+    fscrypt
+    neovim
+    pam-u2f
+    flatpak
+    plasma-wallpapers-dynamic
+    powertop
+    ptyxis
+    restic
+    wireguard-tools
+    zsh
+    intel-media-driver
+)
+
+# Install all Fedora packages (bulk - safe from COPR injection)
+echo "Installing ${#FEDORA_PACKAGES[@]} packages from Fedora repos..."
+dnf -y install "${FEDORA_PACKAGES[@]}"
 #
 #
 #systemctl enable podman.socket
 #
+flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
+# Disable Fedora Flatpak remotes
+for remote in fedora fedora-testing; do
+   if flatpak remote-list | grep -q "$remote"; then
+        flatpak remote-delete "$remote"
+   fi
+done
 
