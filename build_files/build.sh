@@ -41,7 +41,7 @@ FEDORA_PACKAGES=(
     emacs
     zsh
     fish
-    tailscape
+    tailscale
     freeipa-client
     distrobox
     usbguard
