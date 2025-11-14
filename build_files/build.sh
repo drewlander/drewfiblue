@@ -64,6 +64,10 @@ FEDORA_PACKAGES=(
 echo "Installing ${#FEDORA_PACKAGES[@]} packages from Fedora repos..."
 dnf -y install "${FEDORA_PACKAGES[@]}"
 
+dnf swap mesa-va-drivers mesa-va-drivers-freeworld
+dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+
+dnf swap ffmpeg-free ffmpeg --allowerasing
 echo "Installing Docker from official repo..."
 dnf config-manager addrepo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
 sed -i "s/enabled=.*/enabled=0/g" /etc/yum.repos.d/docker-ce.repo
