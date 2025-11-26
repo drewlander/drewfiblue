@@ -85,5 +85,6 @@ dnf -y install --enablerepo=docker-ce-stable \
 #
 #
 systemctl enable podman.socket
+mkdir /nix
 #
 
