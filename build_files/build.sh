@@ -32,6 +32,8 @@ dnf install -y @development-tools
 dnf install -y tmux neovim emacs zsh tailscale
 dnf install -y distrobox  usbguard usbguard-notifier setroubleshoot setools fscrypt neovim pam-u2f flatpak
 dnf install -y pam_yubico pamu2fcfg yubikey-manager  headsetcontrol gnome-text-editor evince 
+dnf config-manager -y addrepo --from-repofile=https://packages.freedom.press/yum-tools-prod/dangerzone/dangerzone.repo
+dnf install -y dangerzone
 #
 FEDORA_PACKAGES=(
     mullvad-browser 
