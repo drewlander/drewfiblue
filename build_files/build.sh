@@ -57,6 +57,7 @@ FEDORA_PACKAGES=(
     ptyxis
     restic
     zsh
+    deskflow
     intel-media-driver
 )
 
