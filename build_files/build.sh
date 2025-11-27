@@ -99,7 +99,10 @@ dnf -y install --enablerepo=docker-ce-stable \
     docker-model-plugin
 
 #
-#
+#fix permissions
+
+/ctx/fix_permissions.sh
+
 systemctl enable podman.socket
 mkdir /nix
 #
