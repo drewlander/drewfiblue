@@ -61,6 +61,7 @@ FEDORA_PACKAGES=(
     zsh
     deskflow
     intel-media-driver
+    gnome-tweaks
 )
 
 # Install all Fedora packages (bulk - safe from COPR injection)
